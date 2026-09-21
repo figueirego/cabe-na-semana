@@ -4,7 +4,25 @@ MVP de planejamento semanal para responder uma pergunta que uma lista comum não
 
 A pessoa informa prazo, importância e esforço. A plataforma calcula uma prioridade explicável, organiza as atividades em um Kanban e mostra quando os compromissos ultrapassam a capacidade semanal. Os cartões podem ser arrastados com mouse, toque ou teclado; o menu **Mover** permanece como alternativa acessível.
 
-> Neste projeto, MVP significa **Minimum Viable Product — Produto Mínimo Viável**. Não significa Model–View–Presenter e não descreve o framework da interface.
+![Quadro de planejamento do Cabe na Semana, com capacidade semanal e atividades em Kanban](docs/images/preview.jpg)
+
+*Captura real da interface com dados de demonstração.*
+
+## O que o projeto entrega
+
+- **Planejamento com limite de horas:** define a capacidade da semana e identifica sobrecarga.
+- **Prioridade explicável:** combina prazo, importância e esforço, mostrando o motivo da pontuação.
+- **Kanban acessível:** movimenta atividades por mouse, toque, teclado ou pelo menu **Mover**.
+- **Fluxo completo de atividades:** cadastro, edição, exclusão e mudança de coluna com persistência.
+- **Feedback imediato:** atualização otimista no frontend e recuperação do estado anterior quando a gravação falha.
+
+## Desenvolvimento full stack
+
+O projeto reúne interface em React/Next.js, API em C#/.NET, regras de domínio testáveis e persistência relacional. O cálculo do planejamento fica no backend; o frontend apresenta o resultado e coordena a interação. A execução com Docker integra a aplicação e o PostgreSQL em um ambiente local reproduzível.
+
+**Explore:** [executar com Docker](#executar-tudo-com-docker) · [desenvolvimento local](#executar-diretamente-para-desenvolver) · [arquitetura](#arquitetura) · [testes](#testar-e-verificar) · [limites](#limites-conscientes)
+
+> Projeto pessoal em estágio de MVP (*Produto Mínimo Viável*), voltado ao planejamento individual. A implementação atual utiliza Next.js no frontend e ASP.NET Core na API.
 
 ## Stack
 
@@ -18,6 +36,13 @@ A pessoa informa prazo, importância e esforço. A plataforma calcula uma priori
 ## Executar tudo com Docker
 
 Pré-requisito: Docker Desktop ou Docker Engine com Compose.
+
+Obtenha o projeto:
+
+```bash
+git clone https://github.com/figueirego/cabe-na-semana.git
+cd cabe-na-semana
+```
 
 Na raiz do repositório, crie a configuração local:
 
@@ -255,3 +280,9 @@ Não existem cookies, sessão ou autenticação neste MVP. Ao adicionar autentic
 - Compose preparado para desenvolvimento/demonstração local, não para produção pública.
 
 Próximos passos proporcionais: migrations, integração PostgreSQL em CI, autenticação/autorização, dados por usuário/semana, readiness do banco, logs estruturados e tratamento de concorrência.
+
+## Autor
+
+**João Matheus** · Engenheiro de Software com foco em desenvolvimento Full Stack.
+
+[GitHub](https://github.com/figueirego) · [LinkedIn](https://www.linkedin.com/in/jomatheusdev/) · [E-mail](mailto:jomatheusdev@gmail.com)
